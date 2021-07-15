@@ -15,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MoneyTest {
     @Test
-    public void testMultiplication() throws Exception {}{
-        Dollar five = new Dollar(5);
+    public void testMultiplication() throws Exception {
+        Money five = Money.dollar(5);
         assertEquals(new Dollar(10), five.times(2));
         assertEquals(new Dollar(15), five.times(3));
     }
@@ -30,7 +30,7 @@ public class MoneyTest {
     }
     @Test
     public void testFrancMultiplication(){
-        Franc five = new Franc(5);
+        Money five = Franc.franc(5);
         assertEquals(new Franc(10), five.times(2));
         assertEquals(new Franc(15), five.times(3));
     }

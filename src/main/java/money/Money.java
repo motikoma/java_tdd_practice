@@ -2,8 +2,9 @@ package money;
 
 import java.util.Objects;
 
-public class Money {
+abstract class Money {
     protected int amount;
+    abstract Money times(int multiplier);
 
     @Override
     public boolean equals(Object o) {
@@ -16,5 +17,13 @@ public class Money {
     @Override
     public int hashCode() {
         return Objects.hash(amount);
+    }
+
+    static Money dollar(int amount){
+        return new Dollar(amount);
+    };
+
+    static Money franc(int amount){
+        return new Franc(amount);
     }
 }
