@@ -6,11 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 // TODO
 // [] レート換算処理
-// [] Moneyの丸目処理
+// [] Moneyのまるめ処理
 // [] nullとの等価性比較
 // [] 他のオブジェクトとの等価性比較
 // [] DollarとFrancの重複
 // [] timesの一般化
+// [] FrancとDollarを比較する
 
 public class MoneyTest {
     @Test
@@ -25,6 +26,7 @@ public class MoneyTest {
         assertFalse(new Dollar(5).equals(new Dollar(6)));
         assertTrue(new Franc(5).equals(new Franc(5)));
         assertFalse(new Franc(5).equals(new Franc(6)));
+        assertFalse(new Franc(5).equals(new Dollar(5)));
     }
     @Test
     public void testFrancMultiplication(){
