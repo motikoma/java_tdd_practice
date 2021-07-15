@@ -2,6 +2,9 @@ package money;
 
 import java.util.Objects;
 
+// バリューオブジェクト：コンストラクタで設定したインスタンス変数の値が変わらない
+// バリューオブジェクトを使えば別名参照問題を防ぐことができる
+// フィールドをprivateにしておくことで間違った代入を防ぐことができる
 public class Dollar {
 
   private int amount;

@@ -1,3 +1,5 @@
+import money.Dollar;
+
 public class FizzBuzz {
   public String convert(int num) {
     if (num % 15 == 0){
@@ -12,4 +14,3 @@ public class FizzBuzz {
     return String.valueOf(num);
     }
 }
-
