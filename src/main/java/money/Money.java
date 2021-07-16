@@ -2,10 +2,9 @@ package money;
 
 import java.util.Objects;
 
-abstract class Money {
+class Money {
     protected int amount;
     protected String currency;
-    abstract Money times(int multiplier);
 
     Money (int amount, String currency) {
         this.amount = amount;
@@ -16,12 +15,16 @@ abstract class Money {
         return currency;
     };
 
+    Money times(int multiplier) {
+        return new Money(this.amount * multiplier, currency);
+    }
+
     static Money dollar(int amount){
-        return new Dollar(amount, "USD");
+        return new Money(amount, "USD");
     };
 
     static Money franc(int amount){
-        return new Franc(amount, "CHF");
+        return new Money(amount, "CHF");
     }
 
     @Override
@@ -29,11 +32,19 @@ abstract class Money {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Money money = (Money) o;
-        return amount == money.amount;
+        return amount == money.amount && currency.equals(money.currency);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(amount);
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
     }
 }
