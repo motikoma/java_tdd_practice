@@ -14,20 +14,22 @@ class Money implements Expression {
   String currency() {
     return currency;
   }
-  ;
 
   Money times(int multiplier) {
     return new Money(this.amount * multiplier, currency);
   }
 
   Expression plus(Money addend) {
-    return new Money(amount + addend.amount, currency);
+    return new Sum(this, addend);
+  }
+
+  public Money reduce(String to){
+    return this;
   }
 
   static Money dollar(int amount) {
     return new Money(amount, "USD");
   }
-  ;
 
   static Money franc(int amount) {
     return new Money(amount, "CHF");

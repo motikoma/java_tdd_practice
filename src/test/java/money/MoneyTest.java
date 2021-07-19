@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 // TODO
 // [] レート換算処理
+// [] $5 + $5がMoneyを返す
+// [] Bank.reduce(Money)
 // [] Moneyのまるめ処理
 // [] nullとの等価性比較
 // [] 他のオブジェクトとの等価性比較
@@ -45,5 +47,29 @@ public class MoneyTest {
     Bank bank = new Bank();
     Money reduced = bank.reduce(sum, "USD");
     assertEquals(Money.dollar(10), reduced);
+  }
+
+  @Test
+  public void testPlusReturnsSum(){
+    Money five = Money.dollar(5);
+    Expression result = five.plus(five);
+    Sum sum = (Sum) result;
+    assertEquals(five, sum.augend);
+    assertEquals(five, sum.addend);
+  }
+
+  @Test
+  public void testReduceSum(){
+    Expression sum = new Sum(Money.dollar(5), Money.dollar(4));
+    Bank bank = new Bank();
+    Money result = bank.reduce(sum, "USD");
+    assertEquals(Money.dollar(9), result);
+  }
+
+  @Test
+  public void testReduceMoney(){
+    Bank bank = new Bank();
+    Money result = bank.reduce(Money.dollar(1), "USD");
+    assertEquals(Money.dollar(1), result);
   }
 }
