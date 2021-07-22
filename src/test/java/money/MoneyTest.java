@@ -5,21 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 // TODO
-// [] レート換算処理
 // [] $5 + $5がMoneyを返す
-// [] Bank.reduce(Money)
-// [] Moneyのまるめ処理
-// [] nullとの等価性比較
-// [] 他のオブジェクトとの等価性比較
-// [] DollarとFrancの重複
-// [] timesの一般化
-// [-] FrancとDollarを比較する
-// [] 通貨の概念
-// [] testFrancMultiplicationを削除する？
+// [] sum.plus
+// [] Expresssion.times
 
 public class MoneyTest {
   @Test
-  public void testMultiplication() throws Exception {
+  public void testMultiplication() {
     Money five = Money.dollar(5);
     assertEquals(Money.dollar(10), five.times(2));
     assertEquals(Money.dollar(15), five.times(3));
@@ -79,6 +71,16 @@ public class MoneyTest {
     bank.addRate("CHF", "USD", 2);
     Money result = bank.reduce(Money.franc(2), "USD");
     assertEquals(Money.dollar(1), result);
+  }
+
+  @Test
+  public void testMixedAddtional(){
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFrancs = Money.franc(10);
+    Bank bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+    assertEquals(Money.dollar(10), result);
   }
 
   @Test
