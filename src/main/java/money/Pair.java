@@ -2,8 +2,8 @@ package money;
 
 import java.util.Objects;
 class Pair {
-    private String from;
-    private String to;
+    private final String from;
+    private final String to;
     Pair(String from, String to){
         this.from = from;
         this.to = to;
