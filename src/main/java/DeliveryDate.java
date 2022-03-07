@@ -13,15 +13,13 @@ public class DeliveryDate {
         Month month = localDate.getMonth();
         int year = localDate.getYear();
 
-        if (day >= 25) {
-            month.plus(1L);
-        } else if (month.equals(Month.DECEMBER) && day >= 20) {
-            month.plus(1L);
+        if (month.equals(Month.DECEMBER) && day >= 20) {
+            return LocalDate.of(year + 1, month.plus(1L), 31);
+        } else if (day >= 25){
+            return LocalDate.of(year, month.plus(1L), getLastDay(year, month.plus(1L)));
         }
 
-
-
-        return LocalDate.of(localDate.getYear(), localDate.getMonth(), lastDay);
+        return LocalDate.of(year, month, getLastDay(year, month));
     }
 
     protected int getLastDay(int year, Month month){
