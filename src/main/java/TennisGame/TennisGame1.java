@@ -26,26 +26,25 @@ public class TennisGame1 implements TennisGame {
         } else if(player1.score >= 4 || player2.score >= 4){
             return getAdvantageScore();
         } else {
-            for(int i = 1; i < 3; i++){
-                if(i == 1){ tempScore = player1.score; }
-                else { score+="-"; tempScore = player2.score; }
-                switch (tempScore){
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
+            score += getNormalScoreName(player1.score);
+            score += "-";
+            score += getNormalScoreName(player2.score);
         }
         return score;
+    }
+
+    private String getNormalScoreName(int tempScore) {
+        switch (tempScore){
+            case 0:
+                return "Love";
+            case 1:
+                return "Fifteen";
+            case 2:
+                return "Thirty";
+            case 3:
+                return "Forty";
+        }
+        return "";
     }
 
     private String getAdvantageScore() {
@@ -83,5 +82,4 @@ public class TennisGame1 implements TennisGame {
     }
 }
 
-// TODO 2.7.4 共通するロジックをメソッド化する
-
+// TODO: 2.8.7 一時変数を省略する
