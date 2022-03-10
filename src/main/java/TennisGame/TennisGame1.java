@@ -19,36 +19,17 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore(){
-        String score = "";
-        int tempScore = 0;
-        if(player1.score == player2.score){
+        if(player1.isTieScore(player2)){
             return getTieScore();
-        } else if(player1.score >= 4 || player2.score >= 4){
+        } else if(player1.isAdvantageScore() || player2.isAdvantageScore()){
             return getAdvantageScore();
         } else {
-            score += getNormalScoreName(player1.score);
-            score += "-";
-            score += getNormalScoreName(player2.score);
+            return player1.getNormalScoreName(player1.score) + "-" + player1.getNormalScoreName(player2.score);
         }
-        return score;
-    }
-
-    private String getNormalScoreName(int tempScore) {
-        switch (tempScore){
-            case 0:
-                return "Love";
-            case 1:
-                return "Fifteen";
-            case 2:
-                return "Thirty";
-            case 3:
-                return "Forty";
-        }
-        return "";
     }
 
     private String getAdvantageScore() {
-        boolean isMoreScoreByPlayer1 = isMoreScore(player1, player2);
+        boolean isMoreScoreByPlayer1 = player1.isMoreScoreThan(player2);
         int minusResult = Math.abs(player1.score - player2.score);
 
         if(isMoreScoreByPlayer1){
@@ -58,21 +39,9 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
-    private Boolean isMoreScore(Player player1, Player player2){
-        return player1.score > player2.score;
-    }
-
     private String getTieScore(){
-        switch(player1.score){
-            case 0:
-                return "Love-All";
-            case 1:
-                return "Fifteen-All";
-            case 2:
-                return "Thirty-All";
-            default:
-                return "Deuce";
-        }
+        if(player1.score >= 3) return "Deuce";
+        return player1.getNormalScoreName(player1.score) + "-All";
     }
 
     private String getAdvantageMessage(int minusResult, Player player){
@@ -81,5 +50,3 @@ public class TennisGame1 implements TennisGame {
         return "";
     }
 }
-
-// TODO: 2.8.7 一時変数を省略する

@@ -139,14 +139,6 @@ class TennisGame1Test {
         }
     }
 
-    @Test
-    public void _player名が違うパターン(){
-        TennisGame1 tennisGame1 = new TennisGame1("P1", "P2");
-        wonPointBy("P1", 4);
-        String score = tennisGame1.getScore();
-        assertEquals("Win for P1", score);
-    }
-
     private void wonPointBy(String playerName, int point) {
         for (int i = 0; i < point; i++) {
             tennisGame1.wonPoint(playerName);
