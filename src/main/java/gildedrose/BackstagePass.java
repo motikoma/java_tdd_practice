@@ -9,24 +9,25 @@ public class BackstagePass implements ICategorizedItem {
 
     @Override
     public void updateItem() {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-
-            if (item.sellIn < 11) {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-            }
-
-            if (item.sellIn < 6) {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-            }
+        if (item.sellIn <= 5) {
+            increaseQuality(3);
+        } else if (item.sellIn <= 10) {
+            increaseQuality(2);
+        } else {
+            increaseQuality(1);
         }
-        item.sellIn = item.sellIn - 1;
+
+        item.decreaseSellIn();
+
         if (item.sellIn < 0) {
-            item.quality = item.quality - item.quality;
+            item.quality = 0;
         }
     }
+
+    private void increaseQuality(int times) {
+        for (int i = 0; i < times; i++) {
+            item.increaseQuality();
+        }
+    }
+
 }

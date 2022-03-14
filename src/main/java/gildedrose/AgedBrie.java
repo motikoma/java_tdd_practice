@@ -9,14 +9,11 @@ public class AgedBrie implements ICategorizedItem {
 
     @Override
     public void updateItem() {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
-        item.sellIn = item.sellIn - 1;
+        item.increaseQuality();
+        item.decreaseSellIn();
         if (item.sellIn < 0) {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-            }
+            item.increaseQuality();
         }
     }
+
 }
