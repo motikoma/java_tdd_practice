@@ -6,15 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// TODO
-// - [-] 赤皿1枚で合計100円
-// - [-] 赤皿2枚で合計200円
-// - [-] 青皿1枚で合計300円
-// - [-] 赤皿1枚青皿2枚で合計700円
-// - [-] 黄皿1枚で合計450円
-// - [-] 青皿1枚黄皿2枚で合計1200円
-// - [-] 赤皿1枚黄皿1枚青皿1枚で合計1300円
-
 class AccountTest {
 
     private Account account;

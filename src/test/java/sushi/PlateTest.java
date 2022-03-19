@@ -4,11 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// - [-] リファクタリングでPlateクラスを抽出
-// - [-] 1~4週の場合、割引されていないことを確認する（赤,青,黄）
-// - [-] 5~9週の場合、10%割引されていることを確認する（赤,青,黄）
-// - [-] 10週以上の場合、20%割引されていることを確認する（赤,青,黄）
-
 class PlateTest {
 
     @Nested
