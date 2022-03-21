@@ -24,13 +24,13 @@ public class ConveyerTest {
     public void _複数種類のネタをユニークで取得できることを確認(){
         conveyerAdd("とろ", 1);
         conveyerAdd("まぐろ", 2);
-        List<String> netaList = conveyer.getNetaList();
+        List<Neta> netaList = conveyer.getNetaList();
 
-        assertEquals("とろ", netaList.get(0));
+        assertEquals("とろ", netaList.get(0).getName());
 
         // まぐろが重複していても、1つだけ取得できる想定
         assertEquals(2, netaList.size());
-        assertEquals("まぐろ", netaList.get(1));
+        assertEquals("まぐろ", netaList.get(1).getName());
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ConveyerTest {
         conveyerAdd("まぐろ", 2);
         conveyerAdd("いか", 3);
         conveyerAdd("さけ", 4);
-        List<String> netaList = conveyer.getNetaList();
+        List<Neta> netaList = conveyer.getNetaList();
 
         assertEquals(4, netaList.size());
     }
@@ -51,7 +51,7 @@ public class ConveyerTest {
         conveyerAdd("いか", 3);
         conveyerAdd("さけ", 4);
         conveyerAdd("するめ", 5);
-        List<String> netaList = conveyer.getNetaList();
+        List<Neta> netaList = conveyer.getNetaList();
 
         assertEquals(4, netaList.size());
     }

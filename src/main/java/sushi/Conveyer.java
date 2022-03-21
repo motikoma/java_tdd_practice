@@ -5,19 +5,13 @@ import java.util.*;
 public class Conveyer {
 
     private static final int NoNeedAddNetaNum = 5;
+    private Map<String, Integer> netaMap = new LinkedHashMap<>();
 
-    private Map<String, Integer> netaMap;
-    private List<String> netaList;
-
-    public Conveyer() {
-        this.netaMap = new LinkedHashMap<>();
-        this.netaList = new ArrayList<>();
-    }
-
-    public List<String> getNetaList() {
+    public List<Neta> getNetaList() {
+        List<Neta> netaList = new ArrayList<>();
         this.netaMap.forEach((k, v) -> {
             if(v >= NoNeedAddNetaNum) return;
-            this.netaList.add(k);
+            netaList.add(new Neta(k, v));
         });
 
         return netaList;
