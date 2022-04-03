@@ -1,4 +1,4 @@
-package shape;
+package refactoringByJava.shape;
 
 public class ShapeOval extends Shape {
     public ShapeOval(int startX, int startY, int endX, int endY) {

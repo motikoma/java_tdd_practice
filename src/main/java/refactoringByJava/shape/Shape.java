@@ -1,4 +1,4 @@
-package shape;
+package refactoringByJava.shape;
 
 public abstract class Shape {
     static final int TYPECODE_LINE = 0;

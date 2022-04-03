@@ -1,4 +1,4 @@
-package shape;
+package refactoringByJava.shape;
 
 public class ShapeRectangle extends Shape {
     public ShapeRectangle(int startX, int startY, int endX, int endY) {
@@ -12,7 +12,7 @@ public class ShapeRectangle extends Shape {
 
     @Override
     public int getTypeCode() {
-        return Shape.TYPECODE_RECTANGLE;
+        return TYPECODE_RECTANGLE;
     }
 
     @Override

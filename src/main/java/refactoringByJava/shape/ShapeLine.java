@@ -1,4 +1,4 @@
-package shape;
+package refactoringByJava.shape;
 
 public class ShapeLine extends Shape {
     public ShapeLine(int startX, int startY, int endX, int endY) {
@@ -12,7 +12,7 @@ public class ShapeLine extends Shape {
 
     @Override
     public int getTypeCode() {
-        return Shape.TYPECODE_LINE;
+        return TYPECODE_LINE;
     }
 
     @Override
