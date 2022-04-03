@@ -12,7 +12,7 @@ public class ShapeLine extends Shape {
 
     @Override
     public int getTypeCode() {
-        return TYPECODE_LINE;
+        return Shape.TYPECODE_LINE;
     }
 
     @Override

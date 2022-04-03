@@ -12,7 +12,7 @@ public class ShapeRectangle extends Shape {
 
     @Override
     public int getTypeCode() {
-        return TYPECODE_RECTANGLE;
+        return Shape.TYPECODE_RECTANGLE;
     }
 
     @Override
