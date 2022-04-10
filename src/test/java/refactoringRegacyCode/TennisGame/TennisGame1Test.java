@@ -3,7 +3,6 @@ package refactoringRegacyCode.TennisGame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import refactoringRegacyCode.TennisGame.TennisGame.TennisGame1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
