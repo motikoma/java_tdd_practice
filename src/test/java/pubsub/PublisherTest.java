@@ -2,8 +2,8 @@ package pubsub;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import designPattern.pubsub.Publisher;
-import designPattern.pubsub.Subscriber;
+import design_pattern.pubsub.Publisher;
+import design_pattern.pubsub.Subscriber;
 
 import static org.junit.jupiter.api.Assertions.*;
 
