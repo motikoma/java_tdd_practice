@@ -1,4 +1,4 @@
-package immutable;
+package immutable.money;
 
 public class Money {
     final int amount;
