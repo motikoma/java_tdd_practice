@@ -1,4 +1,6 @@
-package immutable.customer;
+package immutable.customer.rule;
+
+import immutable.customer.PurchaseHistory;
 
 public class GoldCustomerPurchaseAmountRule implements ExcellentCustomerRule {
     public boolean ok(final PurchaseHistory history) {
