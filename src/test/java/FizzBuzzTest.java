@@ -1,3 +1,4 @@
+import fizzbuzz.FizzBuzz;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -15,8 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
 // - [×] 3を渡すと文字列「Fizz」を返す
 //- [×] 5の倍数のときは数の代わりに「Buzz」に変換する
 // - [×] 5を渡すと文字列「Buzz」を渡す
-//- [×] 3と5両方の倍数のときは数の代わりに「FizzBuzz」に変換する
-// - [×] 15を渡すと文字列「FizzBuzz」を渡す
+//- [×] 3と5両方の倍数のときは数の代わりに「fizzbuzz.FizzBuzz」に変換する
+// - [×] 15を渡すと文字列「fizzbuzz.FizzBuzz」を渡す
 
 //テスト容易性:低, 重要度:低
 //- [] 1からnまで
@@ -24,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 //- [] プリントする
 
 
-@DisplayName("Fizz Buzz 数列と変換規則を扱う FizzBuzz クラス")
+@DisplayName("Fizz Buzz 数列と変換規則を扱う fizzbuzz.FizzBuzz クラス")
 class FizzBuzzTest {
 
   private FizzBuzz fizzbuzz;

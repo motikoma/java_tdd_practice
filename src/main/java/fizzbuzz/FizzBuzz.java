@@ -1,3 +1,5 @@
+package fizzbuzz;
+
 public class FizzBuzz {
   public String convert(int num) {
     if (num % 15 == 0){

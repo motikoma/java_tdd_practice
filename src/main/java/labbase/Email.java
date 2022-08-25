@@ -7,4 +7,8 @@ public class Email {
         // TODO: バリデーションを記載する
         this.email = email;
     }
+
+    public String getEmail() {
+        return email;
+    }
 }
