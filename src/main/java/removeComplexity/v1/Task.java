@@ -1,4 +1,4 @@
-package task;
+package removeComplexity.v1;
 
 public interface Task {
     Long getId();

@@ -1,4 +1,4 @@
-package task;
+package removeComplexity.v1;
 
 import java.time.LocalDate;
 
@@ -21,15 +21,6 @@ public class PostponableUndoneTask implements UndoneTask {
         this.postponeCount = postponeCount;
     }
 
-    public UndoneTask postpone() {
-        if (postponeCount < MAX_POSTPONE_COUNT) {
-            return new PostponableUndoneTask(id, name, dueDate.plusDays(1), postponeCount + 1);
-        } else {
-            return new UndoneTaskWithDeadline(id, name, dueDate.plusDays(1));
-        }
-    }
-
-
     @Override
     public Long getId() {
         return null;
@@ -48,5 +39,13 @@ public class PostponableUndoneTask implements UndoneTask {
     @Override
     public DoneTask done() {
         return new DoneTask(id, name, LocalDate.now());
+    }
+
+    public UndoneTask postpone() {
+        if (postponeCount < MAX_POSTPONE_COUNT) {
+            return new PostponableUndoneTask(id, name, dueDate.plusDays(1), postponeCount + 1);
+        } else {
+            return new UndoneTaskWithDeadline(id, name, dueDate.plusDays(1));
+        }
     }
 }
