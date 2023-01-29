@@ -1,8 +1,10 @@
 package removeComplexity.v2.domain.task.undone.postponable;
 
 import removeComplexity.v2.domain.task.PostponeCount;
+import removeComplexity.v2.domain.task.Task;
 import removeComplexity.v2.domain.task.done.DoneLowerPriorityTask;
 import removeComplexity.v2.domain.task.done.DoneTask;
+import removeComplexity.v2.domain.task.undone.UndoneHighPriorityTask;
 
 public class UndoneLowPriorityPostponableTask implements UndonePostponableTask {
     private final Long id;
@@ -67,6 +69,22 @@ public class UndoneLowPriorityPostponableTask implements UndonePostponableTask {
     @Override
     public String getStatus() {
         return this.status;
+    }
+
+    @Override
+    public Task ChangeHighPriority() {
+        return UndoneHighPriorityTask.create(this.id, this.name, this.postponeCount);
+    }
+
+    @Override
+    public Task ChangeMiddlePriority() {
+        return UndoneMiddlePriorityPostponableTask.create(this.id, this.name, this.postponeCount);
+    }
+
+    // FIX: 本来は不要なメソッドだが、インターフェースの実装のために必要
+    @Override
+    public Task ChangeLowPriority() {
+        return null;
     }
 
 }
