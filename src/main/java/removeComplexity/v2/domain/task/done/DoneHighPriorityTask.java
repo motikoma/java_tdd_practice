@@ -1,6 +1,7 @@
 package removeComplexity.v2.domain.task.done;
 
 import removeComplexity.v2.domain.task.PostponeCount;
+import removeComplexity.v2.domain.task.Task;
 import removeComplexity.v2.domain.task.undone.UndoneHighPriorityTask;
 
 public class DoneHighPriorityTask implements DoneTask {
@@ -60,6 +61,21 @@ public class DoneHighPriorityTask implements DoneTask {
     @Override
     public String getStatus() {
         return this.status;
+    }
+
+    @Override
+    public Task changeHighPriority() {
+        return null;
+    }
+
+    @Override
+    public Task changeMiddlePriority() {
+        return null;
+    }
+
+    @Override
+    public Task changeLowPriority() {
+        return null;
     }
 
 }

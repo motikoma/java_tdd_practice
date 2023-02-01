@@ -74,17 +74,17 @@ public class UndoneMiddlePriorityPostponableTask implements UndonePostponableTas
     }
 
     @Override
-    public Task ChangeHighPriority() {
+    public Task changeHighPriority() {
         return UndoneHighPriorityTask.create(this.id, this.name, this.postponeCount);
     }
 
     @Override
-    public Task ChangeMiddlePriority() {
+    public Task changeMiddlePriority() {
         return UndoneMiddlePriorityPostponableTask.create(this.id, this.name, this.postponeCount);
     }
 
     @Override
-    public Task ChangeLowPriority() {
+    public Task changeLowPriority() {
         return UndoneLowPriorityPostponableTask.create(this.id, this.name, this.postponeCount);
     }
 

@@ -70,17 +70,17 @@ public class UndoneLowPriorityDeadlineTask implements UndoneTask {
     }
 
     @Override
-    public Task ChangeHighPriority() {
+    public Task changeHighPriority() {
         return UndoneHighPriorityTask.create(this.id, this.name, this.postponeCount);
     }
 
     @Override
-    public Task ChangeMiddlePriority() {
+    public Task changeMiddlePriority() {
         return UndoneMiddlePriorityDeadlineTask.create(this.id, this.name, this.postponeCount);
     }
 
     @Override
-    public Task ChangeLowPriority() {
+    public Task changeLowPriority() {
         return UndoneLowPriorityPostponableTask.create(this.id, this.name, this.postponeCount);
     }
 }

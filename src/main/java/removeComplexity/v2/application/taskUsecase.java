@@ -3,10 +3,13 @@ package removeComplexity.v2.application;
 import removeComplexity.v2.domain.task.Task;
 import removeComplexity.v2.domain.task.TaskRepository;
 import removeComplexity.v2.domain.task.done.DoneTask;
-import removeComplexity.v2.domain.task.undone.UndoneHighPriorityTask;
 import removeComplexity.v2.domain.task.undone.UndoneTask;
 import removeComplexity.v2.domain.task.undone.postponable.UndonePostponableTask;
 
+/**
+ * TODO: タスクのユースケースを1publicメソッドにすることで不要な抽象化を減らすことができるはず
+ * 
+ */
 public class taskUsecase {
     private final TaskRepository taskRepository;
 
@@ -37,21 +40,21 @@ public class taskUsecase {
 
     public void changeHighPriority(final Long taskId) {
         Task task = this.taskRepository.findById(taskId);
-        task.ChangeHighPriority();
+        task.changeHighPriority();
 
         this.taskRepository.save(task);
     }
 
     public void changeMiddlePriority(final Long taskId) {
         Task task = this.taskRepository.findById(taskId);
-        task.ChangeMiddlePriority();
+        task.changeMiddlePriority();
 
         this.taskRepository.save(task);
     }
 
     public void changeLowPriority(final Long taskId) {
         Task task = this.taskRepository.findById(taskId);
-        task.ChangeLowPriority();
+        task.changeLowPriority();
 
         this.taskRepository.save(task);
     }

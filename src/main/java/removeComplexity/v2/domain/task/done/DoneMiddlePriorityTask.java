@@ -1,6 +1,8 @@
 package removeComplexity.v2.domain.task.done;
 
 import removeComplexity.v2.domain.task.PostponeCount;
+import removeComplexity.v2.domain.task.Task;
+import removeComplexity.v2.domain.task.undone.UndoneMiddlePriorityDeadlineTask;
 import removeComplexity.v2.domain.task.undone.postponable.UndonePostponableTask;
 import removeComplexity.v2.domain.task.undone.postponable.UndoneLowPriorityPostponableTask;
 
@@ -35,7 +37,7 @@ public class DoneMiddlePriorityTask implements DoneTask {
 
     @Override
     public UndonePostponableTask undone() {
-        return UndoneLowPriorityPostponableTask.create(this.id, this.name, this.postponeCount);
+        return UndoneMiddlePriorityDeadlineTask.create(this.id, this.name, this.postponeCount);
     }
 
     @Override
@@ -61,6 +63,21 @@ public class DoneMiddlePriorityTask implements DoneTask {
     @Override
     public String getStatus() {
         return this.status;
+    }
+
+    @Override
+    public Task changeHighPriority() {
+        return null;
+    }
+
+    @Override
+    public Task changeMiddlePriority() {
+        return null;
+    }
+
+    @Override
+    public Task changeLowPriority() {
+        return null;
     }
 
 }

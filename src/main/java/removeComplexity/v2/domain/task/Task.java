@@ -6,7 +6,7 @@ public interface Task {
     String getPriority();
     PostponeCount getPostponeCount();
     String getStatus();
-    Task ChangeHighPriority();
-    Task ChangeMiddlePriority();
-    Task ChangeLowPriority();
+    Task changeHighPriority();
+    Task changeMiddlePriority();
+    Task changeLowPriority();
 }
